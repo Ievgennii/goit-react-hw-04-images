@@ -14,7 +14,11 @@ const ImageGallery = ({ search }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [totalHits, setTotalHits] = useState(null);
 
+  
+
   useEffect(() => {
+    
+    // console.log(page)
     const fetchData = async () => {
       if (!search) {
         return;
@@ -27,7 +31,8 @@ const ImageGallery = ({ search }) => {
 
         setImages(hits);
         setTotalHits(totalHits);
-
+        console.log('++++++++++++++++++++++++++++++++');
+        // setPage(1);
         if (hits.length === 0) {
           setTimeout(() => {
             alert("We're sorry, but we didn't find anything for your request.");
@@ -45,14 +50,15 @@ const ImageGallery = ({ search }) => {
   }, [search]);
 
   useEffect(() => {
+    
     const fetchData = async () => {
       if (page !== 1) {
         setIsLoading(true);
-
+        console.log(page);
         try {
           const result = await getImagesWithQuery(search, page);
           const { hits } = result;
-
+          console.log('_____________________________________');
           setImages(prevImages => [...prevImages, ...hits]);
         } catch (error) {
           setError(error);
@@ -64,7 +70,7 @@ const ImageGallery = ({ search }) => {
     };
 
     fetchData();
-  }, [search, page]);
+  }, [page]);
 
   const changePage = () => {
     if (images.length > 0) {
