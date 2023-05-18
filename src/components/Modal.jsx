@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import css from './styles.module.css';
 
-const Modal = ({ onClose, children }) => {
-  
+const modalRoot = document.querySelector('#modal-root');
+
+const Modal = ({ onClose, children }) => {  
 
   const handlBackDropClick = e => {
     if (e.currentTarget === e.target) {
@@ -27,15 +28,12 @@ const Modal = ({ onClose, children }) => {
     <div className={css.Overlay} onClick={handlBackDropClick}>
       <div className={css.Modal}>{children}</div>
     </div>,
-    document.querySelector('#modal-root')
+    modalRoot
   );
 };
 
 export default Modal;
 
-// import React, { Component } from 'react';
-// import { createPortal } from 'react-dom';
-// import css from './styles.module.css';
 
 // const modalRoot = document.querySelector('#modal-root');
 
