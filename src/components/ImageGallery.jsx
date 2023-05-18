@@ -13,8 +13,8 @@ const ImageGallery = ({ search }) => {
   const [page, setPage] = useState(1);
   const [selectedImage, setSelectedImage] = useState(null);
   const [totalHits, setTotalHits] = useState(null);
-
   
+ 
 
   useEffect(() => {
     
@@ -52,6 +52,7 @@ const ImageGallery = ({ search }) => {
   useEffect(() => {
     
     const fetchData = async () => {
+      
       if (page !== 1) {
         setIsLoading(true);
         console.log(page);
