@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import css from './styles.module.css';
 import { ImSearch } from 'react-icons/im';
 
@@ -41,6 +41,7 @@ const Searchbar = ({onSubmit}) => {
     </header>
   );
 };
+
 // class Searchbar extends Component {
 //   state = {
 //     search: '',
