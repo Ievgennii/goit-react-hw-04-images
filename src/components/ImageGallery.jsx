@@ -17,7 +17,7 @@ const ImageGallery = ({ search }) => {
  
 
   useEffect(() => {
-    
+    setPage(1)
     // console.log(page)
     const fetchData = async () => {
       if (!search) {
@@ -49,9 +49,11 @@ const ImageGallery = ({ search }) => {
     fetchData();
   }, [search]);
 
+
+
   useEffect(() => {
     
-    const fetchData = async () => {
+    const fetchData1 = async () => {
       
       if (page !== 1) {
         setIsLoading(true);
@@ -70,7 +72,7 @@ const ImageGallery = ({ search }) => {
       }
     };
 
-    fetchData();
+    fetchData1();
   }, [page]);
 
   const changePage = () => {

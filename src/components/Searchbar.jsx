@@ -1,8 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import css from './styles.module.css';
 import { ImSearch } from 'react-icons/im';
 
-const Searchbar = ({onSubmit}) => {
+const Searchbar = ({ onSubmit }) => {
   const [search, setSearch] = useState('');
 
   const handlSearchChange = event => {
