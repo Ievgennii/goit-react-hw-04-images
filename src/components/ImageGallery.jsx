@@ -1,4 +1,9 @@
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 import React, { useState, useEffect } from 'react';
+// import React, { Component } from 'react';
 import ImageGalleryItem from './ImageGalleryItem';
 import Button from './Button';
 import { MagnifyingGlass } from 'react-loader-spinner';
@@ -14,10 +19,8 @@ const ImageGallery = ({ search }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [totalHits, setTotalHits] = useState(null);
   
- 
-
   useEffect(() => {
-    setPage(1)
+    // setPage(1)
     // console.log(page)
     const fetchData = async () => {
       if (!search) {
@@ -32,7 +35,7 @@ const ImageGallery = ({ search }) => {
         setImages(hits);
         setTotalHits(totalHits);
         console.log('++++++++++++++++++++++++++++++++');
-        // setPage(1);
+        setPage(1);
         if (hits.length === 0) {
           setTimeout(() => {
             alert("We're sorry, but we didn't find anything for your request.");
@@ -113,7 +116,7 @@ const ImageGallery = ({ search }) => {
 };
 
 export default ImageGallery;
-
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // class ImageGallery extends Component {
 //   state = {
 //     images: [],
@@ -225,3 +228,5 @@ export default ImageGallery;
 //     );
 //   }
 // }
+
+// export default ImageGallery

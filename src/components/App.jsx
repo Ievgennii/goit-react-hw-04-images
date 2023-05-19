@@ -1,3 +1,4 @@
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 import React, {  useState } from 'react';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
@@ -6,20 +7,22 @@ import css from './styles.module.css';
 
 const App = () => {
   const [search, setSearch] = useState('');
-  
+  // const [page, setPage] = useState('');
   const handleSearchSubmit = search => {
     setSearch(search);
   };
 
+  
+
   return (
     <div className={css.App}>
-      <Searchbar onSubmit={handleSearchSubmit} />
+      <Searchbar onSubmit={handleSearchSubmit} onPageChange={handleSearchSubmit}/>
 
-      <ImageGallery search={search} />
+      <ImageGallery search={search}/>
     </div>
   );
 };
-
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // class App extends Component {
 //   state = {
 //     search: '',
